@@ -274,3 +274,10 @@ int main()
 }*/
 //test update
 //从2026年8月14日开始上传到Github
+
+/*#include <stdio.h>
+int main()
+{
+    printf("hello,world!");
+    return 0;
+}*/
