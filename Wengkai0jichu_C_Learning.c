@@ -281,3 +281,135 @@ int main()
     printf("hello,world!");
     return 0;
 }*/
+
+//switch 练习
+
+//星期计算器
+/*#include <stdio.h>
+int main(){
+    printf("请输入1-7的整数，我将输出对应的星期的英文:");
+    int day;
+    scanf("%d",&day);
+    switch (day)
+    {
+    case 1:
+        printf("Monday");
+        break;
+    case 2:
+        printf("Tuesday");
+        break;
+    case 3:
+        printf("Wednesday");
+        break;
+    case 4:
+        printf("Thursday");
+        break;
+    case 5:
+        printf("Friday");
+        break;
+    case 6:
+        printf("Saturday");
+        break;
+    case 7:
+        printf("Sunday");
+        break;
+    default:
+        printf("Invalid");
+        break;
+    }
+    return 0;
+}*/
+
+//月份天数查询
+/*#include <stdio.h>
+int main()
+{
+    printf("请输入要查询的月份，将查询该月份的天数");
+    int month;
+    scanf("%d",&month);
+
+    switch (month)
+    {
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        printf("这个月有31天");
+        break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        printf("这个月有30天");
+        break;
+    case 2:
+        printf("如果是闰年的话，这个月有29天，如果是平年的话这个月只有28天");
+        break;
+    default:
+        printf("invalid");
+        break;
+    }
+    return 0;
+}*/
+
+/*#include <stdio.h>
+int main()
+{
+    printf("请输入一个命令：\n（a 或 A → 添加 /d 或 D → 删除 /q 或 Q → 退出）：");
+    char order;
+    scanf("%c",&order);
+
+    switch (order)
+    {
+    case 'a':
+    case 'A':
+        printf("添加");
+        break;
+    case 'd':
+    case 'D':
+        printf("删除");
+        break;
+    case 'q':
+    case 'Q':
+        printf("退出");
+        break;
+    default:
+        printf("请输入正确的指令！");
+        break;
+    }
+    return 0;
+}*/
+
+//位数判断
+/*#include <stdio.h>
+int main()
+{
+    printf("请输入一个四位数以下的整数（包含四位数）\n");
+    int num;
+    int n=0;
+    scanf("%d",&num);
+
+    //if (num>999&&num<10000){//我这里最开始写成了10000>num>999，直接出错了，我搞忘它连续比较会按照顺序来了，直接变成1>999，跳过第一个了
+    //  n=4;这一坨是错的
+    //&&是且，||是或
+    if (num>=10000){
+        printf("请输入正确的数字！");
+        return 0;//这里用return是在这个分支过后在main里面结束整个程序
+    }else if(num>999){
+        n=4;
+    }else if (num>99){
+        n=3;
+    }else if (num>9){
+        n=2;
+    }else if (num>0){
+        n=1;
+    }else {
+        printf("请输入正确的数字!");
+        return 0;}//同样要结束
+
+    printf("%d位数\n",n);
+    return 0;
+}*/
