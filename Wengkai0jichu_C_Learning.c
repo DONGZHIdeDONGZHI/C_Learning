@@ -413,3 +413,137 @@ int main()
     printf("%d位数\n",n);
     return 0;
 }*/
+
+//whlie循环//先判断条件，再进循环体
+
+//数字位数计算
+/*#include <stdio.h>
+int main()
+{
+    printf("请输入数字（非负整数）：\n");
+    int num;
+    int n=0;
+    scanf("%d",&num);
+    n++;        //这个地方必须有有一个这一坨，如果没有，输入0.就会输出这是0位数，不对
+    num /= 10;  //如果有这一坨，会先+1，保证所有都至少是1位数，0是一位数在这里
+
+    while (num>0){
+        n++;
+        num /=10;
+    }
+    printf("这是一个%d位数",n);
+    return 0;
+}*/
+
+//do while循环//先进循环体，再判断条件
+
+//数字位数计算
+/*#include <stdio.h>
+int main()
+{
+    int num;
+    int n=0;
+    printf("请输入数字（非负整数）：");
+    scanf("%d",&num);
+
+    do
+    {
+        n++;
+        num /=10;//用这个就可以避免用while的麻烦情况
+
+    } while (num>0);
+    printf("这是一个%d位数",n);
+    return 0;
+}*/
+
+//随机数字生成并且加限制
+/*#include <stdio.h>
+#include <stdlib.h>//
+#include <time.h>//
+
+int main()
+{
+    srand(time(0));//
+    int a = rand();//上面4坨都是为了得到一个随机数，但是随机数会非常大
+    printf("%d\n",a%100);//这一步取余100，相当于取一个100以内的数
+
+    return 0;
+}*/
+
+/*#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(){
+    srand(time(0));
+    int number = rand ()%100+1;
+    int count = 0;
+    int a = 0;
+
+    printf("我已经想好了一个1-100以内的数\n");
+    do      //因为不管怎么样都会进这个循环，所以用do whlie更合适
+    {
+        printf("请猜这个数：");
+        scanf("%d",&a);
+        count++;
+
+        if (a>number){
+            printf("大了\n");
+        }else if (a<number){
+            printf("小了\n");
+        }
+
+    } while (number != a);
+
+    printf("猜对了，答案是%d，你猜了%d次",number,count);
+    return 0;
+}*/
+
+//算平均数
+/*#include <stdio.h>
+int main()
+{
+    int n=0;
+    int total=0;
+    int a;
+    printf("请输入几个正整数（结束输入时用-1结尾）\n");
+    do
+    {
+        n++;
+        printf("请输入第%d个数:",n);
+        scanf("%d",&a);
+        total += a;
+
+    } while (a != -1);
+    double totalnumber = total;
+    printf("你输入这%d个数的平均数是%lf",n-1,(totalnumber+1.0)/(n-1));
+    return 0;
+}*/
+
+/*#include <stdio.h>
+int main()
+{
+    int number;
+    int sum = 0;
+    int count = 0;
+    
+    printf("请输入要计算的平均数：（结尾用-1表示停止计数）\n");
+    scanf("%d",&number);
+    while (number != -1)
+    {
+        count ++;
+        sum += number;
+        scanf("%d",&number);
+    }
+    printf("这%d个数的平均数是%lf",count,sum*1.0/count);
+    return 0;
+}*/
+
+/*
+怎么选择合适的结构，还是先弄一个流程图，看是先判断还是先执行
+1/搞清楚要重复做些什么
+2/确认循环的判断条件
+3/循环开始之前应该做些什么，初始状态，循环外部初始化
+4/每次重复完成的状态需要更新什么，迭代
+5/检查特殊和边界情况
+*/
