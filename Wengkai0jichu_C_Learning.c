@@ -547,3 +547,113 @@ int main()
 4/每次重复完成的状态需要更新什么，迭代
 5/检查特殊和边界情况
 */
+
+//整数求逆
+/*#include <stdio.h>
+int main()
+{
+    int x;
+    scanf("%d",&x);
+
+    int digit;
+    int ret=0;
+    
+    while (x>0){
+        digit = x%10;
+        printf("%d",digit);
+        ret = ret*10 + digit;
+        printf("x=%d,digit=%d,ret =%d\n",x,digit,ret);
+        x /= 10;
+    }
+    printf("%d",ret);
+    return 0;
+}*/
+
+//最大值最小值
+/*#include <stdio.h>
+int main()
+{
+    int num,max,min;
+    printf("输入几个数字，以-1作为结束：");
+
+    scanf("%d",&num);
+    if (num!=-1)
+    {
+        max=num;
+        min=max;
+
+        while (num!=-1)
+        {
+            if(num>=max){
+                max=num;
+            }
+            if(num<=min){
+                min=num;
+            }
+        scanf("%d",&num);
+        }
+
+        printf("最大值是：%d\n",max);
+        printf("最小值是：%d",min);
+       
+    }
+    else {
+        printf("没有输入任何有效正整数！");
+    }
+    
+    return 0;
+}*/
+
+/*#include <stdio.h>
+int main()
+{
+    int num;
+
+    do
+    {
+        printf("请你猜一个数字:");
+        scanf("%d",&num);
+        if (num>42)
+        {
+            printf("大了\n");
+        }else if (num<42)
+        {
+            printf("小了\n");
+        }
+    
+    } while (num!=42);
+    printf("猜对了");
+    
+    return 0;
+}*/
+
+/*#include <stdio.h>
+int main()
+{
+    int op;
+
+    do
+    {
+        printf("1.添加\n");
+        printf("2.删除\n");
+        printf("3.程序结束\n");
+        scanf("%d",&op);
+
+        switch (op)
+    {
+        case 1:
+            printf("执行添加\n");
+            break;
+        case 2:
+            printf("执行删除\n");
+            break;
+        case 3:
+            printf("程序结束");
+            break;
+        default:
+            printf("无效选择，请重新输入\n");
+            break;
+    }
+    } while (op!=3);
+    return 0;
+}*/
