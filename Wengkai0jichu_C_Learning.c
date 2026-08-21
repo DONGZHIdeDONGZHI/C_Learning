@@ -657,3 +657,137 @@ int main()
     } while (op!=3);
     return 0;
 }*/
+
+//阶乘
+/*#include <stdio.h>
+int main()
+{
+    printf("请输入一个数字，将计算它的阶乘：\n");
+    int num,total;
+    scanf("%d",&num);
+    total = num;
+    while (num!=1)
+    {
+        num--;
+        total*=num;
+    }
+    
+    printf("这个数的阶乘是:%d",total);
+    return 0;
+}*/
+
+//For 循环
+
+//如果用For循环来算阶乘
+/*#include <stdio.h>
+int main()
+{
+    int n;
+
+    scanf ("%d",&n);
+    int fact = 1;
+
+    int i =1;
+    for ( i = 1; i <= n; i++)
+    //也可以弄成把上面那一个初始化i放到循环里面，变成for ( int i = 1; i <= n; i++)
+    //如果不满足中间那个条件的话，程序会直接跳过，不循环
+    {
+        fact *= i;
+    }
+    printf("%d!=%d\n",n,fact);
+    return 0;
+}*/
+//for (cout=10;count>0;count--)是对于初始的count=10，当count>0时， 重复做下面的循环体，
+//每一轮循环昨晚循环体中的语句后，使得count--
+//For循环内部每一个表达式都可以省略，例如for(;条件;)==while(条件),但是分号不能省
+
+//判断素数
+/*#include <stdio.h>
+int main()
+{
+    int x;
+
+    scanf("%d",&x);
+
+    int i;
+    int isPrime = 1;    // x是素数，这一步我个人觉得理解成布尔值要好理解一点
+    for ( i = 2; i < x; i++)
+    {
+        if (x % i == 0)
+        {
+            isPrime = 0;
+            break;  
+            //break和continue的区别是，遇到了break，直接结束整个循环，而continue的意思是
+            //遇到了continue，终止这个循环，意思是，不做接下来的部分，但是重新回到开头，完成下一次循环
+        }
+    }
+    if (isPrime == 1)
+    {
+        printf("是素数\n");
+    }else{
+        printf("不是素数\n");
+    }
+    return 0;
+}*/
+
+//循环的嵌套
+//输出从1到100的所有素数
+/*#include <stdio.h>
+int main()
+{   
+    int i;
+
+    
+    for (int num = 2; num <=100; num++)
+    {
+            int isPrime=1;
+
+            for ( i = 2; i < num; i++)
+        {
+            if (num % i==0)
+            {
+                isPrime = 0;
+                break;
+            }   
+        }
+
+        if (isPrime == 1)
+        {
+            printf("%d ",num);
+        }
+    }
+    printf("\n");
+    return 0;
+}*/
+
+//输出前50个素数
+/*#include <stdio.h>
+int main()
+{   
+    int i;
+    int cnt=0;//加一个计数器
+    //for (int num = 2; num <=100; num++)
+    int num=2;
+    while (cnt < 50)
+    {
+         int isPrime=1;
+
+            for ( i = 2; i < num; i++)
+        {
+            if (num % i==0)
+            {
+                isPrime = 0;
+                break;
+            }   
+        }
+
+        if (isPrime == 1)
+        {
+            printf("%d ",num);
+            cnt++;//这里也要给计数器cnt++
+        }
+        num++;//因为for循环里面的num++删除，还要每次递增，就要给每次输出素数时给num++
+    }
+    printf("\n");
+    return 0;
+}*/
