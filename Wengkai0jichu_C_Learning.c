@@ -791,3 +791,210 @@ int main()
     printf("\n");
     return 0;
 }*/
+
+//军训期间练习
+//这几天军训啊，根本没时间练习，我又害怕自己搞忘了
+//遂让deep seek给我出几道题我唤醒一下沉睡的记忆
+
+//位数，各位和，最大最小数字
+/*#include <stdio.h>
+int main()
+{
+    int num;
+    printf("请输入一个正整数：\n");
+    scanf("%d",&num);
+    
+    int a = num;
+    int n = 0;
+    do
+    {
+        n++;
+        a /= 10;
+    } while (a>0);
+
+    int b = num;
+    int sum = 0;
+    int digit;
+    
+    while (b>0)
+    {
+        digit = b%10;
+        b /= 10;
+        sum +=digit;
+    }
+    
+    int c = num;
+    int max = c%10;
+    int min = c%10;
+    int dig;
+
+    while (c>0)
+    {
+        dig = c%10;
+        c /= 10;
+            if (dig>=max)
+        {
+            max = dig;
+        }
+
+            if (dig<=min)
+        {
+            min = dig;
+        }
+    }
+    
+    printf("%d,%d,%d,%d",n,sum,max,min);
+    
+    return 0;
+}*/
+
+//小型计算器
+/*#include <stdio.h>
+int main()
+{
+    int a,b;
+    char op;
+    printf("请输入算式：（输入0 q 0结束）");
+
+    do
+        {
+            scanf ("%d %c %d",&a,&op,&b);
+            if (a==0 && op=='q' && b==0)
+            {
+                printf("程序结束");
+                break;
+            }
+        
+        switch (op)
+        {
+        case '+':
+            printf("a+b=%d\n",a+b);
+            break;
+        case '-':
+            printf("a-b=%d\n",a-b);
+            break;
+        case '*':
+            printf("a*b=%d\n",a*b);
+            break;
+        case '/':
+            if (b==0)
+            {
+                printf("0不能做除数\n");
+                break;
+            }else{
+                printf("a/b=%lf\n",a*1.0/b);
+            }
+            break;
+        default:
+            printf("不支持该运算符");
+            break;
+        }
+    } while (a!=0 || op!='q' || b!=0);
+    //这里要注意一点，题目要求的是当这个同时满足的时候停止循环，A且B且C这个的反面是
+    //非A或非B或非C
+ 
+    return 0;
+}*/
+
+//素数统计
+/*#include <stdio.h>
+int main()
+{
+    int a,b,start;
+    int sum = 0;
+    int n = 0;
+    printf("输入两个数：\n");
+    scanf("%d %d",&start,&b);
+    a = start;
+    if (start==1)
+    {
+        a++;
+    }
+    
+    
+    for (int num = a; num <= b; num++)
+    {
+        int isPrime = 1;
+
+        for (int i = 2; i < num; i++)
+        {
+            if (num % i == 0)
+            {
+                isPrime = 0;
+                break;
+            }
+            
+        }
+        if (isPrime == 1)
+        {
+            sum +=num;
+            n++;
+        }
+    }
+    
+    printf("%d和%d之间有%d个素数，和为%d",start,b,n,sum);
+
+    return 0;
+}*/
+
+//三角形
+/*#include <stdio.h>
+int main()
+{
+    printf("输入要打印三角形的层数：");
+    int n;
+    scanf("%d",&n);
+
+    for (int count = 1; count <= n; count++)
+    {
+            for (int i = 1; i <= count; i++)
+        {
+            printf("*");
+        }
+            printf("\n");
+            //主要是这里要换行
+    }
+    return 0;
+}*/
+
+//综合训练
+/*#include <stdio.h>
+int main()
+{
+    int op;
+    int a,b;
+
+    do
+    {
+        printf("输入要做的操作：\n1.加法\n2.减法\n3.退出\n");
+        scanf("%d",&op);
+
+        switch (op)
+            {
+                case 1:
+                    printf("输入两个整数：\n");
+                    scanf("%d %d",&a,&b);
+                    printf("%d+%d=%d\n",a,b,a+b);
+                    break;
+                case 2:
+                    printf("输入两个整数：\n");
+                    scanf("%d %d",&a,&b);
+                    if (a<b)
+                    {
+                        printf("%d-%d=%d\n",b,a,b-a);
+                    }else {
+                        printf("%d-%d=%d\n",a,b,a-b);
+                    }
+                    break;
+                case 3:
+                    printf("再见\n");
+                    break;
+                default:
+                    printf("无效选择\n");
+                    break;
+                }
+    } while (op!=3);      
+    return 0;
+}*/
+
+//好久没弄了，感觉还是有点小难，但是好歹凑够1000行了哈哈
