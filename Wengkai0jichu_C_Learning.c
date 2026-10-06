@@ -1140,3 +1140,10 @@ int main()
 */
 
 //test,出了点小问题，我来试试
+//吓死我了，编码炸了，我还以为都没了，幸好上传到GitHub上了，可以下载回来，测试一下
+/*#include <stdio.h>
+int main(void)
+{
+    printf("Hello,World!");
+    return 0;
+}*/
