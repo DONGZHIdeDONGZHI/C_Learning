@@ -114,7 +114,12 @@ int main()
     printf("请输入第1个温度：\n");
     scanf("%d", &temp);
     max = min = sum = temp;
-    count = (temp >= 30) ? 1 : 0;
+
+    if (temp >= 30) {
+        count = 1;
+    } else {
+        count = 0;
+    }
 
     for (int i = 2; i <= 5; i++)
     {
