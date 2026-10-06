@@ -8,12 +8,12 @@
     3.链接，编译完成过后只是一个半成品，有一些地方机器都还看不懂，有了个printf，他只知道要调用，链接的意思是从C语言的标准库里找到printf这个工具的位置，然后调用，和代码拼在一起组成一个完整的程序
     4.运行，生成了.exe，程序放进内存，由cpu一条一条执行
 */
-#include <stdio.h>
+/*#include <stdio.h>
 int main(void)
 {
     printf("Hello,World!");
     return 0;
-}
+}*/
 
 //C 语言代码阅读
 /*#include <stdio.h>
@@ -64,7 +64,7 @@ return 0;
 4．编程题：输入 5 个温度值，输出最高值、最低值和平均值，并统计其中有几个温度不低于 30 ℃。要求使用数组和循环。
 */
 
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
     printf("请输入5个温度：\n");
@@ -102,7 +102,7 @@ int main()
     printf("最高值：%d\n最低值：%d\n平均值：%f\n有 %d 个温度不低于30度",max,min,sum / 5.0,n);
     
     return 0;
-}*/
+}
 
 //如果不用数组呢，让我来试试
 /*#include <stdio.h>

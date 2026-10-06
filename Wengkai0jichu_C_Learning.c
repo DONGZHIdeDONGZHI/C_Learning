@@ -1144,6 +1144,7 @@ int main()
 /*#include <stdio.h>
 int main(void)
 {
-    printf("Hello,World!");
+    printf("你好，世界！");
     return 0;
 }*/
+//经过一顿操作过后，编码终于正常了，太不容易了我的天啊
