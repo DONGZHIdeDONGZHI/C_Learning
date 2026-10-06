@@ -64,7 +64,7 @@ return 0;
 4．编程题：输入 5 个温度值，输出最高值、最低值和平均值，并统计其中有几个温度不低于 30 ℃。要求使用数组和循环。
 */
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
     printf("请输入5个温度：\n");
@@ -102,7 +102,7 @@ int main()
     printf("最高值：%d\n最低值：%d\n平均值：%f\n有 %d 个温度不低于30度",max,min,sum / 5.0,n);
     
     return 0;
-}
+}*/
 
 //如果不用数组呢，让我来试试
 /*#include <stdio.h>
