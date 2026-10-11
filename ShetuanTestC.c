@@ -45,9 +45,9 @@ int main(void)//之前是啥都没写，这个void也是代表什么都没的意
 果，并给出可以正确运行的版本。
 */
 
-/*
+
 //C 语言找错题
-#include <stdio.h>
+/*#include <stdio.h>
 int main(void)
 {
     int data[5] = {18, 21, 19, 24, 23};
@@ -58,7 +58,7 @@ int main(void)
         total += data[i];
     }//没大括号,不过只有一条语句应该也行
 
-    printf("average = %f\n", total/5.0);//int除以float得到float，%d是给int用的
+    printf("average = %.2f\n", total/5.0);//int除以float得到float，%d是给int用的，这里限制小数位数不然太长了
 return 0;
 }*/
 
