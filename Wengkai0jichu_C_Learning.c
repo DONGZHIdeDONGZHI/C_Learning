@@ -733,6 +733,7 @@ int main()
 
 //循环的嵌套
 //输出从1到100的所有素数
+//判断素数还有一个逻辑就是不用isPrime，直接最后比较那个number和i的大小关系，如果循环走完了，最后number和i应该是大小相等的，判断为是素数
 /*#include <stdio.h>
 int main()
 {   
@@ -1303,5 +1304,173 @@ int main()
 
     return 0;
 }*/
+
+//重新回到课程中来，For循环有个问题是，会先判断那个东西成不成立，成立的话执行循环体，最后再++，再判断下一次，所以，就算没有取到，i最终也会+1
+//循环的判断方法，用哪一个
+
+/*
+如果有固定次数，用for
+如果最开始必须要执行一次，用do
+其他情况用while
+*/
+
 //主要是边界条件的处理，continue和break的区别
-//continue是跳过这一个，继续下一个循环，break是结束整个循环
+//continue是跳过这一个，继续下一个循环，break是结束整个循环，还有就是这两个都只对它所在的最近的那一个循环起作用
+//但是continue一般用在for循环里面，因为for的步进比较明显，别的循环判断条件写在循环体内，容易死循环
+
+//输出1-15间不是4的倍数的数（用continue）
+/*#include <stdio.h>
+int main()
+{
+    for (int i = 1; i <=15 ; i++)
+    {
+        if (i % 4 == 0)
+        {
+            continue;
+        }
+        printf("%d ",i);
+    }
+
+    return 0;
+}*/
+
+//本来练习题是要用break的。但是我好像用了while循环，就不用了
+/*#include <stdio.h>
+int main()
+{
+    int sum = 0;
+    int count = 1;
+    while (sum < 50)
+    {
+        sum += count;
+        count ++;
+    }
+    printf("%d,%d",sum,count);
+
+    return 0;
+}*/
+
+//算人民币的游戏
+/*#include <stdio.h>
+int main()
+{
+    printf("这里有1角2角和5角钱，会根据你给出的钱数，提供一种付款方案\n请输入钱的数量：");
+    int money;
+    scanf("%d",&money);
+
+    int one,two,five;
+    for (one = 0; one <= money*10; one++)
+    {
+        for (two = 0; two <= money*5; two++)
+        {
+            for (five = 0; five <= money*2; five++)
+            {
+                if (one + two*2 + five*5 == money*10)
+                {
+                    printf("你可以选%d张一角的，%d张两角的，%d张五角的来支付这%d元钱\n",one,two,five,money);
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+
+    return 0;
+}*/
+//但是有一个问题是，情况太多了，下面用 接力break的方法简化这个过程
+//接力break
+
+/*#include <stdio.h>
+int main()
+{
+    printf("这里有1角2角和5角钱，会根据你给出的钱数，提供一种付款方案\n请输入钱的数量：");
+    int money;
+    scanf("%d",&money);
+
+    int exit = 0;
+    //这里设一个变量来退出
+
+    int one,two,five;
+    for (one = 0; one <= money*10; one++)
+    {
+        for (two = 0; two <= money*5; two++)
+        {
+            for (five = 0; five <= money*2; five++)
+            {
+                if (one + two*2 + five*5 == money*10)
+                {
+                    printf("你可以选%d张一角的，%d张两角的，%d张五角的来支付这%d元钱\n",one,two,five,money);
+                    exit = 1;
+                    break;
+                }
+            }
+
+            if (exit == 1)
+            {
+                break;//因为break只作用于最近的那一个循环，所以这里用一个，还有下面用一个跳出循环
+            }
+            
+        }
+        
+        if (exit == 1)
+            {
+                break;
+            }
+    }
+    
+
+    return 0;
+}*/
+
+//还有一个方法是用goto out语句，比较适合从多重循环跳到外面的情况
+/*#include <stdio.h>
+int main()
+{
+    printf("这里有1角2角和5角钱，会根据你给出的钱数，提供一种付款方案\n请输入钱的数量：");
+    int money;
+    scanf("%d",&money);
+
+    int one,two,five;
+    for (one = 0; one <= money*10; one++)
+    {
+        for (two = 0; two <= money*5; two++)
+        {
+            for (five = 0; five <= money*2; five++)
+            {
+                if (one + two*2 + five*5 == money*10)
+                {
+                    printf("你可以选%d张一角的，%d张两角的，%d张五角的来支付这%d元钱\n",one,two,five,money);
+                    goto out;
+                }
+                
+            }
+            
+        }
+        
+    }
+out:    
+
+    return 0;
+}*/
+
+//数列求和的情况
+/*#include <stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+
+    double sum = 0.0;
+    double sign = 1.0;
+
+    for (int i = 1; i <= n; i++)
+    {
+        sum += 1.0*sign/i;
+        sign = -sign;//这里有个地方是
+    }
+    printf("%lf",sum);
+
+    return 0;
+}*/
