@@ -1152,3 +1152,156 @@ int main()
     用数组的优点：多占一点内存，但能回头操作，适合“需要反复访问”的任务。
 不用数组：省内存，代码紧凑，适合“流水线式”处理。
 */
+
+//完了完了，好久没写程序了，几个题回忆一下，继续学习
+//成绩统计器
+/*#include <stdio.h>
+int main()
+{
+    int n;
+    printf("请输入学生人数：\n");
+    scanf("%d",&n);
+
+    int score[n-1];
+    printf("请分别输入这%d个成绩：\n",n);
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d",&score[i]);
+    }
+    
+    int max = score[0];
+    int min = score[0];
+    int sum = 0;
+    int num = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (score[i] >= max)
+        {
+            max = score[i];
+        }
+        
+        if (score[i] <= min)
+        {
+            min = score[i];
+        }
+        
+        sum += score[i];
+
+        if (score[i] >=60)
+        {
+            num ++;
+        }
+        
+    }
+    
+    printf("最高分为：%d\n最低分为：%d\n平均分为：%.1f\n及格人数为：%d",max,min,sum*1.0/n,num);
+    return 0;
+}*/
+
+//数字拆解器
+/*#include <stdio.h>
+int main()
+{
+    printf("请输入一个正整数：（1到99999）");
+    int num1;
+
+    scanf("%d",&num1);
+
+    int num2;
+    num2 = num1;
+    int n = 0;
+
+    while (num1 >0)
+    {
+        num1 /= 10;
+        n++;
+    }
+
+    int sum = 0;
+    int position;
+    int new_number = 0;
+    for (int i = 0; i < n ; i++)
+    {
+        position = num2 %10;
+        num2 /=10;
+
+        new_number = new_number*10 + position;
+        sum += position;
+    }
+
+    printf("位数：%d\n各位和：%d\n倒序数：%d\n",n,sum,new_number);
+    return 0;
+}*/
+//做复杂了，应该可以只弄成一个循环就行
+
+/*#include <stdio.h>
+int main()
+{
+    int num;
+    printf("请输入一个正整数：（1到99999）\n");
+    scanf("%d",&num);
+    
+    int new_num = 0;
+    int sum = 0;
+    int n = 0;
+
+    while (num > 0)
+    {
+        new_num = new_num*10 + num %10;
+        sum += num %10;
+
+        num /=10;
+
+        n++;
+    }
+    printf("位数：%d\n各位和：%d\n倒序数：%d\n",n,sum,new_num);
+
+    return 0;
+}*/
+//搞忘倒序的算法了
+
+//素数筛选器
+/*#include <stdio.h>
+int main()
+{
+    int a;
+    int b;
+    int sum = 0;
+    int n = 0;
+
+    printf("请输入两个正整数:\n(其中1≤a≤b≤200)\n");
+    scanf("%d %d",&a,&b);
+    
+    for (int num = a; num <= b; num++)
+    {
+        if (num < 2)
+        {
+            continue;
+        }
+        
+        int isPrime = 1;
+
+        for (int i = 2; i < num; i++)
+        {
+            if (num % i ==0)
+            {
+                isPrime = 0;
+                break;
+            }
+        }
+            
+        if (isPrime == 1)
+            {
+                sum += num;
+                n ++;
+            }
+    }
+    
+    printf("素数个数为：%d\n素数和为：%d\n",n,sum);
+
+    return 0;
+}*/
+//主要是边界条件的处理，continue和break的区别
+//continue是跳过这一个，继续下一个循环，break是结束整个循环
