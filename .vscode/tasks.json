@@ -18,11 +18,53 @@
             "problemMatcher": [
                 "$gcc"
             ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "clear": true,
+                "close": true,
+                "focus": false
+            },
+            "detail": "调试器生成的任务。"
+        },
+        {
+            "type": "cppbuild",
+            "label": "EasyX: 编译当前文件",
+            "command": "D:\\msys2anzhuang\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-O2",
+                "-Wall",
+                "-finput-charset=UTF-8",
+                "-fexec-charset=GBK",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-leasyx",
+                "-lgdi32",
+                "-lole32",
+                "-static"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "调试器生成的任务。"
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "clear": true,
+                "close": true,
+                "focus": false
+            },
+            "detail": "EasyX 图形程序（仅用于 .cpp 文件）"
         }
     ],
     "version": "2.0.0"
